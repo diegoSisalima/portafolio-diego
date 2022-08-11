@@ -1,0 +1,471 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Mouse+Memoirs&display=swap');
+@import url('responsive.css');
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --yelow: #F1A600;
+    --dark-color: #1F1D2C;
+    --light-color: #242635;
+    --grey: #E5E5E5;
+    --grey2: #7c7979;
+    --white: #FFFFFF;
+
+    --semibold: 600;
+    --regular: 400;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /*border: 2px solid;*/
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--white);
+    font-size: 16px;
+    font-weight: var(--regular);
+}
+
+.neon {
+    display: inline-block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    border: none;
+    font: normal 48pxnormal Warnes, Helvetica, sans-serif;
+    color: rgba(255, 255, 255, 1);
+    text-decoration: none;
+    text-align: center;
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    white-space: pre;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 1), 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de;
+    -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+    -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+    -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+    transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.d-inline-block {
+    display: inline-block;
+}
+
+.text-small {
+    color: var(--grey2);
+    font-size: 10px;
+    font-weight: var(--semibold);
+}
+
+.font-titulo {
+    color: var(--white);
+    font-size: 50px;
+    font-weight: var(--semibold);
+}
+
+.font-subtitulo {
+    color: var(--white);
+    font-size: 32px;
+    font-weight: var(--semibold);
+}
+
+.font-subsection {
+    font-size: 18px;
+    font-weight: var(--regular);
+}
+
+/*-------------------------------------------------------------------------------------------------------------*/
+/*----------------------------------Sección Header ----------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------*/
+.header {
+    min-height: 50vh;
+    background-color: var(--dark-color);
+    padding-left: 1rem;
+}
+
+.header-img-fondo {
+    position: absolute;
+    right: 0.5px;
+    z-index: 0;
+    width: 13rem;
+}
+
+.chk,
+.grid-dos,
+.font-titulo,
+.elemento-flex {
+    position: relative;
+    z-index: 20;
+}
+
+/* BARRA DE NAVEGACION ~~~~~~~~~~~~~~~~~~~~~~~*/
+.header--nav {
+    height: 50px;
+    display: flex;
+    padding: 0.5rem 1.5rem;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 90;
+    background-color: var(--dark-color);
+}
+
+.input-menu {
+    display: none;
+}
+
+.icon-menu {
+    font-size: 24px;
+    color: var(--white);
+}
+
+.nav--menu {
+    list-style: none;
+    position: absolute;
+    background-color: var(--white);
+    width: calc(100% - 3rem);
+    top: 100px;
+    padding: 1rem;
+    text-align: center;
+    top: -100%;
+    opacity: 0;
+    transition: all .5s linear;
+    z-index: 90;
+    background-color: var(--dark-color);
+    border-radius: 2rem;
+    border: solid;
+    border-color: var(--light-color)
+}
+
+.input-menu:checked~.nav--menu {
+    top: 4rem;
+    opacity: 1;
+}
+
+/* PANTALLA PRINCIPAL ~~~~~~~~~~~~~~~~~~~~~~~*/
+.contenedor-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+}
+
+/*elemento-grid uno*/
+.contenedor-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.elemento-flex.parrafo1 {
+    margin-right: -5rem;
+    z-index: 30;
+    padding-top: 1rem;
+}
+
+.span {
+    color: var(--yelow);
+}
+
+.elemento-flex.iconos {
+    display: flex;
+    justify-content: space-around;
+}
+
+/*elemento-grid dos*/
+.grid-dos {
+    height: 85%;
+}
+
+/*-------------------------------------------------------------------------------------------------------------*/
+/*----------------------------------Sección ACERCA DE----------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------*/
+
+.section-acerca-de,
+.footer-contacto {
+    background-color: var(--light-color);
+    text-align: center;
+    padding: 1rem 1rem 2.5rem 1rem;
+}
+
+.section-acerca-de>.parrafo-acerca {
+    padding-top: 1rem;
+    max-width: 900px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.contenedor-flex2 {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 900px;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-around;
+    padding-top: 2rem;
+}
+
+.elemento-flex2>img {
+    width: 3rem;
+    height: 3.5rem;
+}
+
+.text-small.acerca {
+    font-size: 12px;
+
+}
+
+/*-------------------------------------------------------------------------------------------------------------*/
+/*----------------------------------Sección Experiencia----------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------*/
+.section-experiencia,
+.section-habilidades,
+.section-portafolio,
+.footer {
+    background-color: var(--dark-color);
+    text-align: center;
+    padding-top: 2rem;
+}
+
+.section-experiencia {
+    height: 75vh;
+    padding-bottom: 2rem;
+}
+
+.contenedor-grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 1rem 0.5rem 0 1.5rem;
+    column-gap: 1rem;
+    height: 90%;
+}
+
+.elemento-iconos,
+.elemento-description,
+.elemento-year {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.elemento-description,
+.text-small-experiencia {
+    text-align: left;
+}
+
+.elemento-img {
+    height: 95%;
+}
+
+/*-------------------------------------------------------------------------------------------------------------*/
+/*----------------------------------Sección Habilidades----------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------*/
+.section-habilidades {
+    padding-top: 3rem;
+    position: relative;
+    height: 85vh;
+}
+
+.contenedor-grid3 {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+}
+
+.elemento-grid-porcentajes,
+.elemento-grid3-description {
+    height: 25rem;
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.elemento-grid-porcentajes {
+    color: var(--yelow);
+    font-size: xx-large;
+    z-index: 20;
+}
+
+.elemento-grid3-description {
+    position: relative;
+    text-align: left;
+    font-weight: var(--semibold);
+}
+
+.font-subtitulo {
+    position: relative;
+}
+
+
+.fondo {
+    position: absolute;
+    height: 100%;
+    width: 8rem;
+    top: 0rem;
+    background-color: var(--light-color);
+    z-index: 0;
+}
+
+/*-------------------------------------------------------------------------------------------------------------*/
+/*----------------------------------Sección mi portafolio----------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------*/
+.contenedor-flex3 {
+    padding: 2rem 1rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.elementos-flex3 {
+    position: relative;
+    height: 12rem;
+    width: 12rem;
+    z-index: 20;
+}
+
+.cuadro-amarillo {
+    height: 8rem;
+    width: 13rem;
+    background-color: var(--yelow);
+    position: absolute;
+    z-index: -1;
+    left: -0.5rem;
+    top: -0.5rem;
+}
+
+.elemento2-flex3 {
+    align-self: flex-end;
+}
+
+/*-------------------------------------------------------------------------------------------------------------*/
+/*----------------------------------Footer contacto----------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------*/
+.footer-contacto {
+    height: 50vh;
+
+}
+
+.contenedor-flex-contacto {
+    display: flex;
+    height: 100%;
+    padding: 2rem 0 2rem 0;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.img-contacto {
+    height: 70px;
+    width: 70px;
+}
+
+.elementos-flex-contacto.email {
+    align-self: flex-end;
+    font-size: 14px;
+}
+
+.texto-contacto {
+    font-weight: var(--semibold);
+    color: var(--white);
+}
+
+.texto-contacto>small {
+    color: var(--grey2);
+}
+
+.pie-pagina {
+    display: inline-block;
+    padding: 1.5rem 0;
+}
+
+
+/*---------------------------------------------------
+------------------------RESPONSIVIDAD--------------------------------------
+--------------------------------------------------------------
+-------------------------------------------------------*/
+
+@media screen and (min-width: 678px) {
+
+    /*general----------------------------*/
+    body {
+        font-size: 18px;
+    }
+
+    .font-titulo {
+        font-size: 150px;
+    }
+
+    .font-subtitulo {
+        font-size: 50px;
+    }
+
+    .font-subsection {
+        font-size: 45px;
+    }
+
+    /*----------------------------------------*/
+    /*barra de navegacion---------------------*/
+    .nav--menu {
+        position: static;
+        opacity: 1;
+        background-color: transparent;
+        display: flex;
+        border: none;
+        width: 100%;
+        justify-content: flex-end;
+        gap: 4rem;
+    }
+
+    .chk {
+        display: none;
+    }
+
+    .nav--item {
+        color: var(--white);
+    }
+
+    /*-------------------------------------*/
+    /*pantalla principal ------------------*/
+    
+    .elemento-flex.parrafo1 {
+        font-size: 3rem;
+        margin-right: -10rem;
+        z-index: 30;
+        padding-top: 1rem;
+    }
+
+    .elemento-flex.parrafo2 {
+        font-size: 2rem;
+        padding-top: 1rem;
+    }
+    .icono-social {
+        height: 3rem;
+        width: 3rem;
+    }
+    .elemento-flex.iconos {
+        justify-content:flex-start;
+        gap: 2rem;
+        padding-top: 2rem;
+    }
+    .header{
+        padding-left: 7rem;
+    }
+    .elemento-grid.grid-dos{
+        height: 40rem;
+        width: 40rem;
+    }
+    /*seccion acerca de------------------*/
+    .contenedor-flex2{
+        justify-content:space-evenly;
+    }
+    .elemento-flex2>img {
+        width: 6rem;
+        height: 6.5rem;
+    }
+}
