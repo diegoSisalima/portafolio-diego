@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Mouse+Memoirs&display=swap');
-@import url('responsive.css');
 
 html {
     scroll-behavior: smooth;
@@ -35,6 +34,12 @@ body {
     color: var(--white);
     font-size: 16px;
     font-weight: var(--regular);
+}
+
+li,
+a{
+    list-style: none;
+    text-decoration: none;
 }
 
 .neon {
@@ -97,7 +102,7 @@ body {
 .header {
     min-height: 50vh;
     background-color: var(--dark-color);
-    padding-left: 1rem;
+    padding: 0 1rem;
 }
 .header-div-cuadrado{
     background-color: var(--light-color);
@@ -116,53 +121,97 @@ body {
 }
 
 /* BARRA DE NAVEGACION ~~~~~~~~~~~~~~~~~~~~~~~*/
-.header--nav {
+
+.nav{
     height: 50px;
     display: flex;
-    padding: 0.5rem 1.5rem;
-    justify-content: flex-end;
     align-items: center;
-    z-index: 90;
-    background-color: var(--dark-color);
+    justify-content:flex-end;
 }
 
-.input-menu {
+.nav--input-menu{
     display: none;
 }
 
-.icon-menu {
-    font-size: 24px;
+.bi-list{
     color: var(--white);
+    font-size: 2rem;
 }
 
-.nav--menu {
-    list-style: none;
+.nav--menu{
+    background-color: var(--dark-color);
+    border-radius: 1.5rem;
+    border: solid 1px;
     position: absolute;
-    background-color: var(--white);
-    width: calc(100% - 3rem);
-    top: 100px;
-    padding: 1rem;
-    text-align: center;
+    top: 50px;
+    z-index: 90;
+    left: 10%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    padding: 1rem 0;
+    /*---*/
     top: -100%;
     opacity: 0;
     transition: all .5s linear;
-    z-index: 90;
-    background-color: var(--dark-color);
-    border-radius: 2rem;
-    border: solid;
-    border-color: var(--light-color)
 }
 
-.input-menu:checked~.nav--menu {
-    top: 4rem;
+.nav--input-menu:checked~.nav--menu {
+    top: 50px;
     opacity: 1;
 }
 
+.nav--item{
+    text-align: center;
+}
+.nav--link{
+    padding: .5rem 1rem;
+}
+.nav--link{
+    font-size: 1rem;
+    border-radius: 1rem;
+    color: whitesmoke;
+}
+.nav--link:hover{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: none;
+    font: normal 48pxnormal Warnes, Helvetica, sans-serif;
+    color: rgba(255, 255, 255, 1);
+    text-decoration: none;
+    text-align: center;
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    white-space: pre;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 1), 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de;
+    -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+    -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+    -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+    transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+    
+}
+
 /* PANTALLA PRINCIPAL ~~~~~~~~~~~~~~~~~~~~~~~*/
+.header::before{
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    width: 65%;
+    height: 300px;
+    background-color: var(--light-color)
+}
+
 .contenedor-grid {
+    padding-bottom: 2rem;
     display: grid;
     grid-template-columns: 1fr 1.5fr;
 }
+
 
 /*elemento-grid uno*/
 .contenedor-flex {
@@ -172,7 +221,7 @@ body {
 }
 
 .elemento-flex.parrafo1 {
-    margin-right: -5rem;
+    margin-right: -6rem;
     z-index: 30;
     padding-top: 1rem;
 }
@@ -186,14 +235,11 @@ body {
     justify-content: space-around;
 }
 
-.bi {
+.bi-linkedin,
+.bi-github,
+.bi-diamond-fill{
     font-size: 1.3rem;
     color: var(--yelow);
-}
-
-/*elemento-grid dos*/
-.grid-dos {
-    height: 85%;
 }
 
 /*-------------------------------------------------------------------------------------------------------------*/
@@ -332,6 +378,10 @@ body {
 /*-------------------------------------------------------------------------------------------------------------*/
 /*----------------------------------Sección mi portafolio----------------------------------------------------------*/
 /*-------------------------------------------------------------------------------------------------------------*/
+.section-portafolio{
+padding: 2rem 1rem 0 1.5rem;
+}
+
 .contenedor-flex3 {
     padding: 2rem 1rem 1rem 1rem;
     display: flex;
@@ -412,8 +462,18 @@ body {
 --------------------------------------------------------------
 -------------------------------------------------------*/
 
-@media screen and (min-width: 678px) {
+    @media screen and (min-width: 714px){
+        .grid-dos{
+            margin: 0px 0px 0px -299px;
+            
+            }
+    }
 
+@media screen and (min-width: 778px) {
+    .grid-dos{
+        margin: 0px 0px 0px 0px;
+        
+        }
     /*general----------------------------*/
     body {
         font-size: 18px;
@@ -437,11 +497,9 @@ body {
         position: static;
         opacity: 1;
         background-color: transparent;
-        display: flex;
         border: none;
-        width: 100%;
+        flex-direction: row;
         justify-content: flex-end;
-        gap: 4rem;
     }
 
     .chk {
@@ -454,9 +512,10 @@ body {
 
     /*-------------------------------------*/
     /*pantalla principal ------------------*/
-    .header-div-cuadrado{
-        width: 60vw;
-        height: 90vh;
+
+    
+    .header::before{
+        height: 750px;
     }
 
     .elemento-flex.parrafo1 {
